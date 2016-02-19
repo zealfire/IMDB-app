@@ -4,12 +4,16 @@
     </head>
     <body>
         <div>
-    		<h1><a href="{% url 'post_new' %}">IMDB app</a></h1>
-		</div>
+            <h1><a href="{% url 'post_new' %}">IMDB app</a></h1>
+        </div>
 
-    		<div>
+            <div>
                 <h1>Top 3 movies the actors are:</h1>
-        		<p> {{ data|linebreaks }}</p>
+                {% for i, j, k in merge_list %}
+                    <tr>
+                        <td> <img src={{ i }}> </td> <td> {{ j }} </td> <td> {{ k }} </td>
+                    </tr>
+                {% endfor %}
             </div>
     </body>
 </html>
