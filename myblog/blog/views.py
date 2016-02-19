@@ -24,7 +24,7 @@ def post_new(request):
             imgsrc = re.findall(r'.*?<div class="lister-item mode-detail">(.*?)<div class="clear">.*?</div>.*?</div>',r, re.DOTALL|re.MULTILINE)
             imgsrc_2 = []
             for i in range(3):
-                imgsrc_1 = re.findall(r'<a href="/title/tt[0-9]+?/\?ref_=filmo_li_i".*?>.*?<img.*?class="loadlate".*?src="(.*?)".*?</a>',imgsrc[i],re.DOTALL|re.MULTILINE)
+                imgsrc_1 = re.findall(r'<a href="/title/tt[0-9]+?/\?ref_=filmo_li_i".*?>.*?<img.*?class="loadlate".*?loadlate="(.*?)".*?src=".*?".*?</a>',imgsrc[i],re.DOTALL|re.MULTILINE)
                 imgsrc_2.append(imgsrc_1[0])
 
             rating = re.findall(r'.*?<div class="inline-block ratings-imdb-rating" name="ir" data-value="(.*?)".*?>',r,re.DOTALL|re.MULTILINE)
