@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title>IMDB app</title>
+    </head>
+    <body>
+        <div>
+    		<h1><a href="{% url 'post_new' %}">IMDB app</a></h1>
+		</div>
+
+    		<div>
+                <h1>Top 3 movies the actors are:</h1>
+        		<p> {{ data|linebreaks }}</p>
+            </div>
+    </body>
+</html>
